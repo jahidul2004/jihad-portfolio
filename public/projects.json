@@ -1,0 +1,140 @@
+[
+    {
+        "id": 1,
+        "name": "Servicia",
+        "shortDescription": "A modern review platform for services like cleaning, plumbing, and repair. User can add and review any services without any cost. This platform helps to find out how good a service are.",
+        "longDescription": "Servicia is a full-stack web app where users can explore services, read/write reviews, and rate providers. Admins can manage service categories and monitor platform activity.",
+        "techStack": [
+            "React",
+            "Tailwind",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "JWT"
+        ],
+        "challengesFaced": [
+            "Implementing secure JWT authentication",
+            "Handling nested reviews and pagination",
+            "Building an admin dashboard from scratch"
+        ],
+        "futureOptimizations": [
+            "Add real-time chat between users and service providers",
+            "Advanced search with filters",
+            "Mobile app version using React Native"
+        ],
+        "liveLink": "https://servicia.web.app",
+        "clientRepo": "https://github.com/jahiduljihad/servicia-client",
+        "serverRepo": "https://github.com/jahiduljihad/servicia-server",
+        "image": "https://i.ibb.co/jvRjb4Wj/image.png"
+    },
+    {
+        "id": 2,
+        "name": "Ahad Car",
+        "shortDescription": "Car rental & ride-sharing platform inspired by Uber.Ahad Car offers users the ability to rent vehicles or book rides. Includes real-time booking, driver dashboards, and Stripe payments.",
+        "longDescription": "Ahad Car offers users the ability to rent vehicles or book rides. Includes real-time booking, driver dashboards, and Stripe payments.",
+        "techStack": [
+            "React",
+            "Firebase",
+            "Tailwind",
+            "Express.js",
+            "MongoDB",
+            "Stripe"
+        ],
+        "challengesFaced": [
+            "Integrating Stripe with dynamic pricing",
+            "Booking conflict resolution",
+            "Driver and user role-based dashboard"
+        ],
+        "futureOptimizations": [
+            "Live tracking with Google Maps API",
+            "Driver earnings dashboard",
+            "AI-based car suggestions"
+        ],
+        "liveLink": "https://ahadcar-ride.web.app",
+        "clientRepo": "https://github.com/jahiduljihad/ahad-car-client",
+        "serverRepo": "https://github.com/jahiduljihad/ahad-car-server",
+        "image": "https://i.ibb.co/p60Nqymm/image.png"
+    },
+    {
+        "id": 3,
+        "name": "T-Tube",
+        "shortDescription": "A minimalist video streaming platform like YouTube.T-Tube lets users explore trending videos, like/comment/share, and upload their own content. Admins can moderate uploads and manage users.",
+        "longDescription": "T-Tube lets users explore trending videos, like/comment/share, and upload their own content. Admins can moderate uploads and manage users.",
+        "techStack": [
+            "React",
+            "Firebase Auth",
+            "Tailwind",
+            "Express.js",
+            "MongoDB"
+        ],
+        "challengesFaced": [
+            "Handling video upload & compression",
+            "Building secure comment system",
+            "Creating an optimized homepage"
+        ],
+        "futureOptimizations": [
+            "Recommendation system using user watch history",
+            "Dark/light toggle",
+            "Mobile-first UX improvements"
+        ],
+        "liveLink": "https://t-tube-platform.web.app",
+        "clientRepo": "https://github.com/jahiduljihad/t-tube-client",
+        "serverRepo": "https://github.com/jahiduljihad/t-tube-server",
+        "image": "https://i.ibb.co/NnJYBGTG/home.png"
+    },
+    {
+        "id": 4,
+        "name": "Flavor Gaven",
+        "shortDescription": "A stylish online food ordering system for restaurants.Users can browse dishes, place orders, and make secure payments. Admins can add/remove menu items and manage orders with real-time updates.",
+        "longDescription": "Users can browse dishes, place orders, and make secure payments. Admins can add/remove menu items and manage orders with real-time updates.",
+        "techStack": [
+            "React",
+            "Tailwind",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Firebase"
+        ],
+        "challengesFaced": [
+            "Maintaining real-time order status",
+            "Creating intuitive food card UI",
+            "Payment integration & order confirmation"
+        ],
+        "futureOptimizations": [
+            "Delivery tracking",
+            "Restaurant-wise filtering",
+            "Multi-language support"
+        ],
+        "liveLink": "https://flavor-gaven.web.app",
+        "clientRepo": "https://github.com/jahiduljihad/flavor-gaven-client",
+        "serverRepo": "https://github.com/jahiduljihad/flavor-gaven-server",
+        "image": "https://i.ibb.co/dPBSrhK/sddefault.webp"
+    },
+    {
+        "id": 5,
+        "name": "Movie Portal",
+        "shortDescription": "Discover and explore movies with rating and reviews.Movie Portal is a film directory web app where users can view movie info, add reviews, and save favorites. Admin dashboard for managing listings.",
+        "longDescription": "Movie Portal is a film directory web app where users can view movie info, add reviews, and save favorites. Admin dashboard for managing listings.",
+        "techStack": [
+            "React",
+            "Tailwind CSS",
+            "Express.js",
+            "MongoDB",
+            "TMDB API"
+        ],
+        "challengesFaced": [
+            "TMDB API integration with pagination",
+            "Implementing save-to-favorites feature",
+            "Dark theme layout with full responsiveness"
+        ],
+        "futureOptimizations": [
+            "Add user profile system",
+            "Personalized movie recommendations",
+            "Watch trailer feature integration"
+        ],
+        "liveLink": "https://movie-portal-client.web.app",
+        "clientRepo": "https://github.com/jahiduljihad/movie-portal-client",
+        "serverRepo": "https://github.com/jahiduljihad/movie-portal-server",
+        "image": "https://i.ibb.co/BCL8yTm/school2.jpg"
+    }
+]
