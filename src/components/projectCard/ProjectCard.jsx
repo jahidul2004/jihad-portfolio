@@ -30,7 +30,7 @@ const ProjectCard = ({ data }) => {
                         {data?.techStack?.map((tech, i) => (
                             <span
                                 key={i}
-                                className="text-xs sm:text-sm bg-white border border-gray-300 text-gray-800 px-2 py-1 rounded-md shadow-sm"
+                                className="text-xs sm:text-sm bg-gradient-to-r from-[#bc34cc] to-[#ff9f07] border border-gray-300 text-white px-2 py-1 rounded-md shadow-sm"
                             >
                                 {tech}
                             </span>

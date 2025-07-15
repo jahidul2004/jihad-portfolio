@@ -197,6 +197,55 @@ function App() {
                         ))}
                     </div>
                 </div>
+
+                {/* Education */}
+                <div>
+                    <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-8">
+                        My{" "}
+                        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                            Educational Qualifications
+                        </span>
+                    </h1>
+                    {/* 🎓 Education Card */}
+                    <div className="flex flex-col gap-4 md:gap-6">
+                        <div className="bg-gradient-to-br from-[#fcefee] to-[#e3e4f8] rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-2">
+                                Diploma in Computer Science and Technology
+                            </h1>
+                            <h2 className="text-lg sm:text-xl font-semibold text-gray-800">
+                                Shyamoli Ideal Polytechnic Institute
+                            </h2>
+                            <p className="text-sm sm:text-base text-gray-700 mt-2">
+                                📅{" "}
+                                <span className="font-medium">
+                                    2022 - Present
+                                </span>
+                            </p>
+                            <p className="text-sm sm:text-base text-gray-700 mt-1">
+                                📚 <span className="font-medium">3.95</span>{" "}
+                                (Out of 4) - Last Semester
+                            </p>
+                        </div>
+                        <div className="bg-gradient-to-br from-[#fcefee] to-[#e3e4f8] rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent mb-2">
+                                Secondary School Certificate (SSC)
+                            </h1>
+                            <h2 className="text-lg sm:text-xl font-semibold text-gray-800">
+                                Sreerayerchar S.I.M High School
+                            </h2>
+                            <p className="text-sm sm:text-base text-gray-700 mt-2">
+                                📅{" "}
+                                <span className="font-medium">
+                                    2022
+                                </span>
+                            </p>
+                            <p className="text-sm sm:text-base text-gray-700 mt-1">
+                                📚 <span className="font-medium">4.72</span>{" "}
+                                (Out of 5)
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
