@@ -14,6 +14,7 @@ import {
   FaGraduationCap,
   FaSchool,
   FaHeart,
+  FaFontAwesome,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -49,6 +50,7 @@ import {
 } from "react-icons/si";
 import { MdDirectionsBike } from "react-icons/md";
 import ProjectCard from "./components/projectCard/ProjectCard";
+import { DiChrome } from "react-icons/di";
 
 // Helper to get skill icons, descriptions, and perfectly matched theme colors
 const getSkillInfo = (techName) => {
@@ -63,7 +65,7 @@ const getSkillInfo = (techName) => {
   if (t.includes("next"))
     return {
       icon: TbBrandNextjs,
-      color: "dark:text-white text-black",
+      color: "dark:text-black",
       bg: "dark:bg-white/10 bg-black/5",
       desc: "Framework",
     };
@@ -133,7 +135,7 @@ const getSkillInfo = (techName) => {
   if (t.includes("vercel"))
     return {
       icon: SiVercel,
-      color: "dark:text-white text-black",
+      color: "text-black",
       bg: "dark:bg-white/10 bg-black/5",
       desc: "Deployment",
     };
@@ -144,7 +146,7 @@ const getSkillInfo = (techName) => {
       bg: "bg-[#00C7B7]/10",
       desc: "Deployment",
     };
-  if (t.includes("jwt"))
+  if (t.includes("JSON Web Token") || t.includes("jwt"))
     return {
       icon: SiJsonwebtokens,
       color: "text-[#FF0000]",
@@ -172,6 +174,20 @@ const getSkillInfo = (techName) => {
       bg: "bg-blue-500/10",
       desc: "Code Editor",
     };
+  if (t.includes("DaisyUI") || t.includes("daisyui"))
+    return {
+      isImage: true,
+      src: "https://i.ibb.co.com/23xvCKWH/daisyui.png",
+      bg: "bg-blue-500/10",
+      desc: "UI Component Library",
+    };
+  if (t.includes("FontAwesome") || t.includes("fontawesome"))
+    return {
+      icon: FaFontAwesome,
+      color: "text-blue-500",
+      bg: "bg-blue-500/10",
+      desc: "UI Component Library",
+    };
 
   return {
     icon: FiCode,
@@ -187,6 +203,7 @@ const projectTabIcons = {
   "Android Apps": FaAndroid,
   "NPM Packages": SiNpm,
   Python: FaPython,
+  "Chrome Extensions": DiChrome,
 };
 
 function App() {
@@ -225,7 +242,14 @@ function App() {
     {
       name: "Frontend",
       icon: FiMonitor,
-      skills: ["React.js", "Next.js", "Tailwind CSS", "JavaScript"],
+      skills: [
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "DaisyUI",
+        "FontAwesome",
+      ],
     },
     {
       name: "Backend",
@@ -258,6 +282,7 @@ function App() {
     "Android Apps",
     "NPM Packages",
     "Python",
+    "Chrome Extensions",
   ];
 
   // Centralized Theme Variables
@@ -282,7 +307,7 @@ function App() {
         ${
           isActive
             ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg shadow-purple-500/25"
-            : `text-slate-500 hover:text-slate-900 dark:hover:text-white ${isDark ? "hover:bg-white/5" : "hover:bg-white border border-slate-200 shadow-sm"}`
+            : `text-slate-500 hover:text-slate-900 dark:hover:text-white ${isDark ? "hover:bg-white/5" : " hover:bg-gray-400 hover:text-slate-900 border border-slate-200 shadow-sm"}`
         }
     `;
 
@@ -292,7 +317,7 @@ function App() {
       <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-500/10 dark:bg-purple-600/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
       <div className="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
-      <div className="flex flex-col lg:flex-row relative z-10 max-w-[1650px] mx-auto">
+      <div className="flex flex-col lg:flex-row relative z-10 max-w-[1650px] mx-auto no-scrollbar">
         {/* ================= LEFT SIDEBAR ================= */}
         <div className="lg:w-[380px] xl:w-[440px] p-4 lg:p-6 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center">
           <div
@@ -328,17 +353,17 @@ function App() {
               {/* Restored Social Icons */}
               <div className="flex gap-4 justify-center w-full mb-6">
                 {[
-                  { icon: FaFacebook, color: "text-[#1877F2]", link: "#" },
+                  { icon: FaFacebook, color: "text-[#1877F2]", link: "https://facebook.com/jahidul.islam.941620" },
                   {
                     icon: FaGithub,
                     color: isDark ? "text-white" : "text-black",
-                    link: "#",
+                    link: "https://github.com/jahidul2004",
                   },
-                  { icon: FaLinkedin, color: "text-[#0A66C2]", link: "#" },
+                  { icon: FaLinkedin, color: "text-[#0A66C2]", link: "https://linkedin.com/in/islam-jahidul-jihad" },
                   {
                     icon: FaSquareXTwitter,
                     color: isDark ? "text-white" : "text-black",
-                    link: "#",
+                    link: "https://x.com/JJihad77597",
                   },
                 ].map((Social, idx) => (
                   <a
@@ -355,7 +380,7 @@ function App() {
             </div>
 
             {/* Beautiful Contact Info Cards */}
-            <div className="space-y-2 w-full mb-4">
+            {/* <div className="space-y-2 w-full mb-4">
               <div
                 className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${isDark ? "bg-white/5 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
               >
@@ -364,14 +389,20 @@ function App() {
                 >
                   <FiMail size={20} />
                 </div>
-                <div>
-                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">
-                    Email Me
-                  </p>
-                  <p className="text-sm font-extrabold truncate">
-                    contact@jahidul.dev
-                  </p>
-                </div>
+                <a
+                  href="mailto:islamjahiduljihad@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div>
+                    <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">
+                      Email Me
+                    </p>
+                    <p className="text-sm font-extrabold truncate">
+                      islamjahiduljihad@gmail.com
+                    </p>
+                  </div>
+                </a>
               </div>
 
               <div
@@ -389,12 +420,13 @@ function App() {
                   <p className="text-sm font-extrabold">Dhaka, Bangladesh</p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-3 w-full mt-auto">
               <a
-                href="#"
+                href="https://jahiduljihad.netlify.app/resume/jahidulsResume.pdf"
+                download
                 className="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-extrabold text-[15px] flex justify-center gap-2 shadow-[0_10px_20px_rgba(168,85,247,0.2)] hover:shadow-lg transition-all hover:-translate-y-0.5 active:scale-95"
               >
                 <FiDownload size={18} /> Download Resume
@@ -420,7 +452,7 @@ function App() {
                 href="#home"
                 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 tracking-tighter"
               >
-                J.
+                JIHAD
               </a>
 
               <div className="hidden lg:flex gap-1 bg-slate-100 dark:bg-white/5 p-1.5 rounded-full">
@@ -429,7 +461,7 @@ function App() {
                     <a
                       key={item}
                       href={`#${item.toLowerCase()}`}
-                      className={`px-5 py-2.5 rounded-full text-[13px] font-bold uppercase tracking-wide transition-all ${isDark ? "text-gray-300 hover:text-white hover:bg-white/10" : "text-slate-600 hover:text-purple-600 hover:bg-white shadow-sm"}`}
+                      className={`px-5 py-2.5 rounded-full text-[13px] font-bold uppercase tracking-wide transition-all ${isDark ? "text-gray-300 hover:text-white hover:bg-white/10" : "text-slate-600 hover:text-purple-600 hover:bg-white"}`}
                     >
                       {item}
                     </a>
@@ -509,7 +541,7 @@ function App() {
 
             {/* Tab Bar with Icons */}
             <div
-              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto ${isDark ? "bg-white/5" : "bg-slate-100"}`}
+              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto`}
             >
               {skillCategories.map((category) => {
                 const Icon = category.icon;
@@ -574,7 +606,7 @@ function App() {
             </h2>
 
             <div
-              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto ${isDark ? "bg-white/5" : "bg-slate-100"}`}
+              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto`}
             >
               {projectCategories.map((tab) => {
                 const Icon = projectTabIcons[tab];
@@ -797,7 +829,22 @@ function App() {
                           Email Address
                         </p>
                         <p className="font-black text-lg truncate">
-                          contact@jahidul.dev
+                          islamjahiduljihad@gmail.com
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      className={`flex items-center gap-6 p-6 rounded-[2rem] transition-all ${isDark ? "bg-black/40 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
+                    >
+                      <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-orange-500 flex items-center justify-center shadow-inner">
+                        <FiMapPin size={24} />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-black text-gray-500 uppercase tracking-widest mb-1">
+                          Location
+                        </p>
+                        <p className="font-black text-lg truncate">
+                          Dhaka, Bangladesh
                         </p>
                       </div>
                     </div>
@@ -806,7 +853,7 @@ function App() {
 
                 <div className="flex-1 xl:max-w-xl">
                   <form onSubmit={handleContactSubmit} className="space-y-5">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 gap-5">
                       <input
                         type="text"
                         name="name"
@@ -818,6 +865,13 @@ function App() {
                         type="email"
                         name="email"
                         placeholder="Email Address"
+                        required
+                        className={`w-full px-6 py-5 rounded-2xl border outline-none font-bold text-sm transition-all shadow-inner ${inputStyle}`}
+                      />
+                      <input
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
                         required
                         className={`w-full px-6 py-5 rounded-2xl border outline-none font-bold text-sm transition-all shadow-inner ${inputStyle}`}
                       />

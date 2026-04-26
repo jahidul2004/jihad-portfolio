@@ -1,98 +1,361 @@
 [
   {
     "id": 1,
-    "title": "Result Vhai",
+    "title": "Furniro",
     "category": "Websites",
-    "shortDescription": "A comprehensive diploma result platform with advanced filtering and real-time data fetching.",
-    "longDescription": "Result Vhai is a dedicated platform for diploma students in Bangladesh to seamlessly check, track, and analyze their academic results. Built with a highly scalable MERN stack, it features lightning-fast search algorithms and an intuitive user interface.",
-    "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    "shortDescription": "A stylish and functional online furniture shopping platform designed to deliver a smooth user experience.",
+    "longDescription": "Furniro is a modern e-commerce platform dedicated to home furnishings. From elegant sofas to smart storage solutions, it empowers users to discover and purchase furniture that matches their aesthetic and budget. The application features a fully responsive design, secure checkout processes, and an intuitive product catalog.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Firebase",
+      "React Router"
+    ],
     "challengesFaced": [
-      "Handling concurrent real-time requests",
-      "Parsing large amounts of result data efficiently"
+      "Building a dynamic cart and checkout system.",
+      "Optimizing image loading for a vast product catalog."
     ],
     "futureOptimizations": [
-      "Student analytics dashboard",
-      "Mobile application version"
+      "Implement AR features for virtual furniture placement.",
+      "Add advanced product filtering and search capabilities."
     ],
-    "liveLink": "https://result-vhai.vercel.app",
-    "clientRepo": "https://github.com/jahiduljihad/result-vhai-client",
-    "serverRepo": "https://github.com/jahiduljihad/result-vhai-server",
-    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000"
+    "liveLink": "https://furnirofurn.vercel.app/",
+    "clientRepo": "https://github.com/jahidul2004/furniro",
+    "serverRepo": "https://github.com/jahidul2004/furniro-server",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000"
   },
   {
     "id": 2,
-    "title": "OneSkill",
+    "title": "Guardian Care",
     "category": "Websites",
-    "shortDescription": "A premium e-learning platform focusing on seamless course delivery and interactive student dashboards.",
-    "longDescription": "OneSkill bridges the gap between expert instructors and eager learners. It features secure user authentication, advanced course category layouts, and an intricately designed user object structure for personalized learning experiences.",
-    "techStack": ["Next.js", "Firebase", "MongoDB", "Tailwind CSS", "JWT"],
+    "shortDescription": "A comprehensive hostel management platform for meal plans, memberships, and transactions.",
+    "longDescription": "Guardian Care streamlines the complexities of hostel management. It provides a centralized dashboard to manage student meal plans, process membership subscriptions, handle transactions securely via Stripe, and moderate user reviews. It ensures a seamless and authenticated experience for both administrators and residents.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Stripe Integration",
+      "Firebase"
+    ],
     "challengesFaced": [
-      "Structuring complex nested user objects",
-      "Securing video content delivery"
+      "Integrating Stripe for secure and recurring membership payments.",
+      "Managing role-based access control for admins and residents."
     ],
     "futureOptimizations": [
-      "Real-time collaborative notes",
-      "AI-driven course recommendations"
+      "Automated meal notification system.",
+      "Integration with biometric attendance hardware."
     ],
-    "liveLink": "#",
-    "clientRepo": "https://github.com/jahiduljihad/oneskill",
-    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1000"
+    "liveLink": "https://guardian-care-hostel.vercel.app/",
+    "clientRepo": "https://github.com/jahidul2004/guardian-care",
+    "serverRepo": "https://github.com/jahidul2004/guardian-care-server",
+    "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&q=80&w=1000"
   },
   {
     "id": 3,
-    "title": "TuneJ",
-    "category": "Android Apps",
-    "shortDescription": "A sleek, offline music player focusing on high-fidelity audio playback and minimalist UI.",
-    "longDescription": "TuneJ was born out of the love for simplified, low-beat music listening. It is an offline music application built with cross-platform technologies, offering beautiful glassmorphic visualizers, custom playlists, and system-level media controls.",
-    "techStack": ["React Native", "Electron", "Node.js", "Tailwind CSS"],
+    "title": "Servicia",
+    "category": "Websites",
+    "shortDescription": "A user-friendly platform to explore, rate, and review various local services.",
+    "longDescription": "Servicia empowers communities by providing a transparent platform for service reviews. Users can explore a wide range of local services, from plumbing to tutoring, read authentic reviews, and share their own experiences. This helps consumers make informed decisions while promoting quality service providers.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Firebase"
+    ],
     "challengesFaced": [
-      "Accessing native device file systems",
-      "Implementing background audio playback"
+      "Implementing a robust and fair rating calculation algorithm.",
+      "Designing an intuitive interface for browsing diverse service categories."
     ],
     "futureOptimizations": [
-      "Cloud sync for playlists",
-      "Advanced equalizer settings"
+      "Geolocation-based service recommendations.",
+      "Direct messaging system between users and service providers."
     ],
-    "liveLink": "#",
-    "clientRepo": "https://github.com/jahiduljihad/tunej",
-    "image": "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=1000"
+    "liveLink": "https://servicia-c2208.web.app/",
+    "clientRepo": "https://github.com/jahidul2004/servicia-client",
+    "serverRepo": "https://github.com/jahidul2004/servicia-server",
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1000"
   },
   {
     "id": 4,
-    "title": "React-Neon-UI",
-    "category": "NPM Packages",
-    "shortDescription": "A lightweight UI component library for React tailored for modern, glowing neon aesthetics.",
-    "longDescription": "Built to accelerate frontend development, this NPM package provides a suite of highly customizable, glowing UI components. It ensures accessibility while maintaining a striking visual appeal suitable for modern dark-themed applications.",
-    "techStack": ["React", "TypeScript", "Rollup", "NPM"],
+    "title": "SSIMHS Portal",
+    "category": "Websites",
+    "shortDescription": "The official digital portal for Sreerayerchar S.I.M High School.",
+    "longDescription": "A heartfelt project bringing my childhood school into the digital age. This comprehensive portal serves as a central hub for students, parents, and teachers. It features announcements, academic calendars, teacher profiles, and a secure student dashboard for accessing results and resources.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Firebase"
+    ],
     "challengesFaced": [
-      "Configuring Rollup for optimal tree-shaking",
-      "Ensuring strict TypeScript type safety"
+      "Designing a scalable database schema for student records and grades.",
+      "Creating an accessible UI suitable for all age groups."
     ],
     "futureOptimizations": [
-      "Adding more complex grid layouts",
-      "Interactive documentation site"
+      "Online admission application system.",
+      "Integrated parent-teacher communication module."
     ],
-    "liveLink": "https://npmjs.com/",
-    "clientRepo": "https://github.com/jahiduljihad/react-neon-ui",
-    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
+    "liveLink": "https://ssim-school.vercel.app/",
+    "image": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=1000"
   },
   {
     "id": 5,
-    "title": "Data Scraper Pro",
-    "category": "Python",
-    "shortDescription": "An advanced web scraping automation tool built with Python and BeautifulSoup.",
-    "longDescription": "A robust Python utility designed to extract large datasets from dynamic web pages. It handles rate limiting, utilizes rotating proxies, and outputs clean, structured JSON or CSV data for analysis.",
-    "techStack": ["Python", "BeautifulSoup", "Selenium", "Pandas"],
+    "title": "OneSkill",
+    "category": "Websites",
+    "shortDescription": "A premium e-learning platform focusing on seamless course delivery.",
+    "longDescription": "OneSkill is an interactive educational platform designed to connect expert instructors with students worldwide. It boasts a secure authentication system, categorized course libraries, and personalized student dashboards to track learning progress effectively.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "Firebase"
+    ],
     "challengesFaced": [
-      "Bypassing advanced anti-bot protections",
-      "Optimizing memory usage for large DOM parsing"
+      "Structuring complex nested data for course modules and lessons.",
+      "Ensuring secure and optimized delivery of video content."
     ],
     "futureOptimizations": [
-      "GUI interface using Tkinter",
-      "Automatic cloud database integration"
+      "Implementation of interactive quizzes and assignments.",
+      "AI-driven personalized course recommendations."
+    ],
+    "liveLink": "https://one-skills.vercel.app/",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 6,
+    "title": "ScholarN",
+    "category": "Websites",
+    "shortDescription": "A platform providing the latest news and updates on worldwide scholarships.",
+    "longDescription": "ScholarN is a dedicated web application aiming to help students and researchers stay informed about global scholarship opportunities. The platform curates the latest news, application deadlines, and eligibility criteria to make higher education more accessible to aspiring scholars.",
+    "techStack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Tailwind CSS"
+    ],
+    "challengesFaced": [
+      "Aggregating and structuring large amounts of dynamic educational data.",
+      "Creating advanced search and filtering mechanisms for scholarships."
+    ],
+    "futureOptimizations": [
+      "Automated email alerts for approaching deadlines.",
+      "Personalized scholarship matching based on user profiles."
     ],
     "liveLink": "#",
-    "clientRepo": "https://github.com/jahiduljihad/python-scraper",
-    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000"
+    "clientRepo": "https://github.com/jahidul2004/scholarn",
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 7,
+    "title": "PINews",
+    "category": "Android Apps",
+    "shortDescription": "A sleek and responsive mobile application delivering the latest global news.",
+    "longDescription": "PINews is a mobile application that aggregates breaking news from around the world. Built entirely with React Native CLI, it leverages external News APIs to provide real-time updates across various categories like technology, business, and sports, all within a smooth, native-like interface.",
+    "techStack": [
+      "React Native CLI",
+      "News API",
+      "React Navigation",
+      "JavaScript"
+    ],
+    "challengesFaced": [
+      "Handling API rate limits and implementing efficient data caching.",
+      "Ensuring smooth scrolling performance with large lists of articles."
+    ],
+    "futureOptimizations": [
+      "Offline reading mode for saved articles.",
+      "Personalized news feed based on user reading habits."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/PINews",
+    "image": "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 8,
+    "title": "iDev",
+    "category": "Android Apps",
+    "shortDescription": "A comprehensive device information tool providing detailed hardware and software metrics.",
+    "longDescription": "iDev is a powerful utility application that acts as a diagnostic tool for Android devices. Developed with React Native CLI, it dives deep into the system to present users with precise data regarding their device's CPU, RAM, storage, battery health, and network information in a clean UI.",
+    "techStack": [
+      "React Native CLI",
+      "Java (Native Modules)",
+      "Device Info API",
+      "Tailwind (Native)"
+    ],
+    "challengesFaced": [
+      "Writing native Java modules to extract deep hardware information.",
+      "Maintaining UI responsiveness while gathering real-time telemetry."
+    ],
+    "futureOptimizations": [
+      "Real-time hardware temperature monitoring.",
+      "Exportable device specification reports."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/idev-app",
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 9,
+    "title": "CuCurrency",
+    "category": "Android Apps",
+    "shortDescription": "A real-time currency converter app with precise exchange rates.",
+    "longDescription": "CuCurrency is a fast and reliable financial tool built to assist travelers and professionals. Using React Native CLI, it connects to live currency exchange APIs to deliver instant, accurate conversions across dozens of global currencies with a highly intuitive user interface.",
+    "techStack": [
+      "React Native CLI",
+      "Exchange Rate API",
+      "Axios",
+      "JavaScript"
+    ],
+    "challengesFaced": [
+      "Handling offline scenarios with locally cached exchange rates.",
+      "Ensuring precision in floating-point monetary calculations."
+    ],
+    "futureOptimizations": [
+      "Historical exchange rate charts and graphs.",
+      "Crypto-currency conversion support."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/currency-converter-app",
+    "image": "https://images.unsplash.com/photo-1580519542036-ed4713998b6b?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 10,
+    "title": "TikTakToe",
+    "category": "Android Apps",
+    "shortDescription": "A classic Tic-Tac-Toe game with a simple, user-friendly interface.",
+    "longDescription": "A modern take on the classic paper-and-pencil game. TikTakToe is a lightweight Android game engineered with React Native CLI. It focuses on a fluid, distraction-free gaming experience with smooth animations and instant state updates.",
+    "techStack": ["React Native CLI", "JavaScript", "React Hooks"],
+    "challengesFaced": [
+      "Optimizing the winning logic algorithm for instant detection.",
+      "Creating seamless UI animations without performance drops."
+    ],
+    "futureOptimizations": [
+      "AI-based single-player mode with varying difficulty.",
+      "Bluetooth/WiFi local multiplayer integration."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/tik-tak-toe-app",
+    "image": "https://images.unsplash.com/photo-1611996575749-79a3a250f563?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 11,
+    "title": "Rainy Weather",
+    "category": "Android Apps",
+    "shortDescription": "A weather forecasting app delivering real-time meteorological data and elegant UI.",
+    "longDescription": "Rainy Weather is a beautiful weather application that keeps users updated on current conditions and future forecasts. Built via React Native CLI, it utilizes geolocation and weather APIs to display precise temperatures, humidity, wind speeds, and visual weather conditions.",
+    "techStack": [
+      "React Native CLI",
+      "OpenWeatherMap API",
+      "Geolocation",
+      "JavaScript"
+    ],
+    "challengesFaced": [
+      "Managing asynchronous location permissions and API calls gracefully.",
+      "Designing dynamic UI backgrounds that change based on the weather."
+    ],
+    "futureOptimizations": [
+      "Severe weather push notifications.",
+      "Interactive radar and precipitation maps."
+    ],
+    "liveLink": "#",
+    "clientRepo": "#",
+    "image": "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 12,
+    "title": "Rongila",
+    "category": "Chrome Extensions",
+    "shortDescription": "A modern, beautiful color picker browser extension with an elegant water-drop design.",
+    "longDescription": "Rongila is an essential productivity tool for designers and developers. It allows users to pick colors directly from any webpage, adjust them using intuitive HSL/RGB sliders, and save custom palettes. Additionally, it supports exporting and importing color palettes as JSON files.",
+    "techStack": [
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Chrome Extension API",
+      "JSON"
+    ],
+    "challengesFaced": [
+      "Implementing an accurate eyedropper tool within the browser sandbox.",
+      "Managing local storage state for saved user palettes."
+    ],
+    "futureOptimizations": [
+      "Contrast checker for web accessibility (WCAG) compliance.",
+      "Cloud sync integration for palettes across multiple devices."
+    ],
+    "liveLink": "https://drive.google.com/file/d/1YPapS07sdz2cD0qb46hmDu2Mq71alLPf/view?usp=sharing",
+    "clientRepo": "https://github.com/jahidul2004/rongila-color-picker",
+    "image": "https://images.unsplash.com/photo-1525909002-1b05e0c869d8?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 13,
+    "title": "OneMath",
+    "category": "NPM Packages",
+    "shortDescription": "A robust mathematical utility library for modern JavaScript applications.",
+    "longDescription": "OneMath is an open-source NPM package designed to simplify complex mathematical operations in JavaScript. Whether it's geometric calculations, statistical analysis, or matrix operations, OneMath provides a clean and typed API for developers to integrate advanced math functions effortlessly.",
+    "techStack": ["JavaScript", "TypeScript", "Node.js", "NPM"],
+    "challengesFaced": [
+      "Ensuring precise floating-point calculations.",
+      "Structuring the library for optimal tree-shaking in modern bundlers."
+    ],
+    "futureOptimizations": [
+      "Expanding the library to include calculus operations.",
+      "Providing comprehensive interactive documentation."
+    ],
+    "liveLink": "https://npmjs.com/",
+    "clientRepo": "#",
+    "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 14,
+    "title": "Goriber Tesla",
+    "category": "Python",
+    "shortDescription": "A fun self-driving car simulation utilizing pixel color detection logic.",
+    "longDescription": "Goriber Tesla is an engaging mini-project built to explore the fundamentals of autonomous navigation. Using Python and Pygame, this simulation features a vehicle that automatically drives along a predefined track. It relies on real-time pixel color detection logic to stay on course, demonstrating basic sensor-based decision making.",
+    "techStack": ["Python", "Pygame", "Computer Vision Logic"],
+    "challengesFaced": [
+      "Tuning the color detection thresholds for consistent track recognition.",
+      "Implementing smooth steering logic based on sensor feedback."
+    ],
+    "futureOptimizations": [
+      "Upgrading to machine learning models for navigation instead of basic color detection.",
+      "Adding dynamic obstacles and collision avoidance algorithms."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/self-driving-car",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 15,
+    "title": "TuTube",
+    "category": "Python",
+    "shortDescription": "A desktop application for downloading YouTube videos effortlessly.",
+    "longDescription": "TuTube is a graphical desktop application built with Python that allows users to download YouTube videos in various formats. It utilizes Tkinter for a clean, user-friendly interface and relies on the powerful yt-dlp library for reliable video extraction and conversion.",
+    "techStack": ["Python", "Tkinter", "yt-dlp", "OS Module"],
+    "challengesFaced": [
+      "Handling asynchronous downloads without freezing the GUI.",
+      "Parsing and presenting available video resolutions to the user."
+    ],
+    "futureOptimizations": [
+      "Batch playlist downloading support.",
+      "Audio-only (MP3) conversion options."
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahidul2004/tutube-youtube-video-downloader",
+    "image": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1000"
   }
 ]
