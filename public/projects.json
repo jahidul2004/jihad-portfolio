@@ -1,140 +1,98 @@
 [
-    {
-        "id": 1,
-        "name": "Servicia",
-        "shortDescription": "A modern review platform for services like cleaning, plumbing, and repair. User can add and review any services without any cost. This platform helps to find out how good a service are.",
-        "longDescription": "Servicia is a full-stack web app where users can explore services, read/write reviews, and rate providers. Admins can manage service categories and monitor platform activity.",
-        "techStack": [
-            "React",
-            "Tailwind",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "JWT"
-        ],
-        "challengesFaced": [
-            "Implementing secure JWT authentication",
-            "Handling nested reviews and pagination",
-            "Building an admin dashboard from scratch"
-        ],
-        "futureOptimizations": [
-            "Add real-time chat between users and service providers",
-            "Advanced search with filters",
-            "Mobile app version using React Native"
-        ],
-        "liveLink": "https://servicia.web.app",
-        "clientRepo": "https://github.com/jahiduljihad/servicia-client",
-        "serverRepo": "https://github.com/jahiduljihad/servicia-server",
-        "image": "https://i.ibb.co/jvRjb4Wj/image.png"
-    },
-    {
-        "id": 2,
-        "name": "Ahad Car",
-        "shortDescription": "Car rental & ride-sharing platform inspired by Uber.Ahad Car offers users the ability to rent vehicles or book rides. Includes real-time booking, driver dashboards, and Stripe payments.",
-        "longDescription": "Ahad Car offers users the ability to rent vehicles or book rides. Includes real-time booking, driver dashboards, and Stripe payments.",
-        "techStack": [
-            "React",
-            "Firebase",
-            "Tailwind",
-            "Express.js",
-            "MongoDB",
-            "Stripe"
-        ],
-        "challengesFaced": [
-            "Integrating Stripe with dynamic pricing",
-            "Booking conflict resolution",
-            "Driver and user role-based dashboard"
-        ],
-        "futureOptimizations": [
-            "Live tracking with Google Maps API",
-            "Driver earnings dashboard",
-            "AI-based car suggestions"
-        ],
-        "liveLink": "https://ahadcar-ride.web.app",
-        "clientRepo": "https://github.com/jahiduljihad/ahad-car-client",
-        "serverRepo": "https://github.com/jahiduljihad/ahad-car-server",
-        "image": "https://i.ibb.co/p60Nqymm/image.png"
-    },
-    {
-        "id": 3,
-        "name": "T-Tube",
-        "shortDescription": "A minimalist video streaming platform like YouTube.T-Tube lets users explore trending videos, like/comment/share, and upload their own content. Admins can moderate uploads and manage users.",
-        "longDescription": "T-Tube lets users explore trending videos, like/comment/share, and upload their own content. Admins can moderate uploads and manage users.",
-        "techStack": [
-            "React",
-            "Firebase Auth",
-            "Tailwind",
-            "Express.js",
-            "MongoDB"
-        ],
-        "challengesFaced": [
-            "Handling video upload & compression",
-            "Building secure comment system",
-            "Creating an optimized homepage"
-        ],
-        "futureOptimizations": [
-            "Recommendation system using user watch history",
-            "Dark/light toggle",
-            "Mobile-first UX improvements"
-        ],
-        "liveLink": "https://t-tube-platform.web.app",
-        "clientRepo": "https://github.com/jahiduljihad/t-tube-client",
-        "serverRepo": "https://github.com/jahiduljihad/t-tube-server",
-        "image": "https://i.ibb.co/NnJYBGTG/home.png"
-    },
-    {
-        "id": 4,
-        "name": "Flavor Gaven",
-        "shortDescription": "A stylish online food ordering system for restaurants.Users can browse dishes, place orders, and make secure payments. Admins can add/remove menu items and manage orders with real-time updates.",
-        "longDescription": "Users can browse dishes, place orders, and make secure payments. Admins can add/remove menu items and manage orders with real-time updates.",
-        "techStack": [
-            "React",
-            "Tailwind",
-            "Node.js",
-            "Express",
-            "MongoDB",
-            "Firebase"
-        ],
-        "challengesFaced": [
-            "Maintaining real-time order status",
-            "Creating intuitive food card UI",
-            "Payment integration & order confirmation"
-        ],
-        "futureOptimizations": [
-            "Delivery tracking",
-            "Restaurant-wise filtering",
-            "Multi-language support"
-        ],
-        "liveLink": "https://flavor-gaven.web.app",
-        "clientRepo": "https://github.com/jahiduljihad/flavor-gaven-client",
-        "serverRepo": "https://github.com/jahiduljihad/flavor-gaven-server",
-        "image": "https://i.ibb.co/dPBSrhK/sddefault.webp"
-    },
-    {
-        "id": 5,
-        "name": "Movie Portal",
-        "shortDescription": "Discover and explore movies with rating and reviews.Movie Portal is a film directory web app where users can view movie info, add reviews, and save favorites. Admin dashboard for managing listings.",
-        "longDescription": "Movie Portal is a film directory web app where users can view movie info, add reviews, and save favorites. Admin dashboard for managing listings.",
-        "techStack": [
-            "React",
-            "Tailwind CSS",
-            "Express.js",
-            "MongoDB",
-            "TMDB API"
-        ],
-        "challengesFaced": [
-            "TMDB API integration with pagination",
-            "Implementing save-to-favorites feature",
-            "Dark theme layout with full responsiveness"
-        ],
-        "futureOptimizations": [
-            "Add user profile system",
-            "Personalized movie recommendations",
-            "Watch trailer feature integration"
-        ],
-        "liveLink": "https://movie-portal-client.web.app",
-        "clientRepo": "https://github.com/jahiduljihad/movie-portal-client",
-        "serverRepo": "https://github.com/jahiduljihad/movie-portal-server",
-        "image": "https://i.ibb.co/BCL8yTm/school2.jpg"
-    }
+  {
+    "id": 1,
+    "title": "Result Vhai",
+    "category": "Websites",
+    "shortDescription": "A comprehensive diploma result platform with advanced filtering and real-time data fetching.",
+    "longDescription": "Result Vhai is a dedicated platform for diploma students in Bangladesh to seamlessly check, track, and analyze their academic results. Built with a highly scalable MERN stack, it features lightning-fast search algorithms and an intuitive user interface.",
+    "techStack": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    "challengesFaced": [
+      "Handling concurrent real-time requests",
+      "Parsing large amounts of result data efficiently"
+    ],
+    "futureOptimizations": [
+      "Student analytics dashboard",
+      "Mobile application version"
+    ],
+    "liveLink": "https://result-vhai.vercel.app",
+    "clientRepo": "https://github.com/jahiduljihad/result-vhai-client",
+    "serverRepo": "https://github.com/jahiduljihad/result-vhai-server",
+    "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 2,
+    "title": "OneSkill",
+    "category": "Websites",
+    "shortDescription": "A premium e-learning platform focusing on seamless course delivery and interactive student dashboards.",
+    "longDescription": "OneSkill bridges the gap between expert instructors and eager learners. It features secure user authentication, advanced course category layouts, and an intricately designed user object structure for personalized learning experiences.",
+    "techStack": ["Next.js", "Firebase", "MongoDB", "Tailwind CSS", "JWT"],
+    "challengesFaced": [
+      "Structuring complex nested user objects",
+      "Securing video content delivery"
+    ],
+    "futureOptimizations": [
+      "Real-time collaborative notes",
+      "AI-driven course recommendations"
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahiduljihad/oneskill",
+    "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 3,
+    "title": "TuneJ",
+    "category": "Android Apps",
+    "shortDescription": "A sleek, offline music player focusing on high-fidelity audio playback and minimalist UI.",
+    "longDescription": "TuneJ was born out of the love for simplified, low-beat music listening. It is an offline music application built with cross-platform technologies, offering beautiful glassmorphic visualizers, custom playlists, and system-level media controls.",
+    "techStack": ["React Native", "Electron", "Node.js", "Tailwind CSS"],
+    "challengesFaced": [
+      "Accessing native device file systems",
+      "Implementing background audio playback"
+    ],
+    "futureOptimizations": [
+      "Cloud sync for playlists",
+      "Advanced equalizer settings"
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahiduljihad/tunej",
+    "image": "https://images.unsplash.com/photo-1611339555312-e607c8352fd7?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 4,
+    "title": "React-Neon-UI",
+    "category": "NPM Packages",
+    "shortDescription": "A lightweight UI component library for React tailored for modern, glowing neon aesthetics.",
+    "longDescription": "Built to accelerate frontend development, this NPM package provides a suite of highly customizable, glowing UI components. It ensures accessibility while maintaining a striking visual appeal suitable for modern dark-themed applications.",
+    "techStack": ["React", "TypeScript", "Rollup", "NPM"],
+    "challengesFaced": [
+      "Configuring Rollup for optimal tree-shaking",
+      "Ensuring strict TypeScript type safety"
+    ],
+    "futureOptimizations": [
+      "Adding more complex grid layouts",
+      "Interactive documentation site"
+    ],
+    "liveLink": "https://npmjs.com/",
+    "clientRepo": "https://github.com/jahiduljihad/react-neon-ui",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    "id": 5,
+    "title": "Data Scraper Pro",
+    "category": "Python",
+    "shortDescription": "An advanced web scraping automation tool built with Python and BeautifulSoup.",
+    "longDescription": "A robust Python utility designed to extract large datasets from dynamic web pages. It handles rate limiting, utilizes rotating proxies, and outputs clean, structured JSON or CSV data for analysis.",
+    "techStack": ["Python", "BeautifulSoup", "Selenium", "Pandas"],
+    "challengesFaced": [
+      "Bypassing advanced anti-bot protections",
+      "Optimizing memory usage for large DOM parsing"
+    ],
+    "futureOptimizations": [
+      "GUI interface using Tkinter",
+      "Automatic cloud database integration"
+    ],
+    "liveLink": "#",
+    "clientRepo": "https://github.com/jahiduljihad/python-scraper",
+    "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1000"
+  }
 ]
