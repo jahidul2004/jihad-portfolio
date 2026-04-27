@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jahidulislamjihad.vercel.app/sitemap.xml
