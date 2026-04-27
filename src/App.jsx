@@ -89,7 +89,7 @@ const skillCategoriesData = [
       },
       {
         name: "FontAwesome",
-        src: "https://img.icons8.com/color/48/font-awesome.png",
+        src: "https://cdn-icons-png.flaticon.com/128/16435/16435625.png",
         bg: "bg-blue-500/10",
         desc: "Icons Library",
         invertDark: false,
@@ -130,7 +130,7 @@ const skillCategoriesData = [
       },
       {
         name: "JSON Web Token",
-        src: "https://img.icons8.com/color/48/json-web-token.png",
+        src: "https://img.icons8.com/?size=48&id=rHpveptSuwDz&format=png",
         bg: "bg-[#FF0000]/10",
         desc: "Authentication",
         invertDark: false,
@@ -189,6 +189,13 @@ const skillCategoriesData = [
     name: "Languages",
     icon: FiTerminal,
     skills: [
+      {
+        name: "Javascript",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        bg: "bg-[#F7DF1E]/10",
+        desc: "Language",
+        invertDark: false,
+      },
       {
         name: "Python",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
