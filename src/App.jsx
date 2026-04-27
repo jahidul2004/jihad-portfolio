@@ -53,6 +53,7 @@ import { MdDirectionsBike } from "react-icons/md";
 import ProjectCard from "./components/projectCard/ProjectCard";
 import { DiChrome } from "react-icons/di";
 import Swal from "sweetalert2";
+import ReCAPTCHA from "react-google-recaptcha";
 
 // Helper to get skill icons, descriptions, and perfectly matched theme colors
 const getSkillInfo = (techName) => {
@@ -209,6 +210,11 @@ const projectTabIcons = {
 };
 
 function App() {
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaValue(value);
+  };
   const [projects, setProjects] = useState([]);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "dark",
@@ -289,6 +295,12 @@ function App() {
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
+
+    // 🚫 captcha check
+    if (!captchaValue) {
+      alert("Please verify you are not a robot!");
+      return;
+    }
 
     const form = e.target;
     const formData = new FormData(form);
@@ -1049,6 +1061,10 @@ function App() {
                       required
                       className={`w-full px-6 py-5 rounded-3xl border outline-none font-bold text-sm transition-all resize-none shadow-inner ${inputStyle}`}
                     ></textarea>
+                    <ReCAPTCHA
+                      sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                      onChange={handleCaptchaChange}
+                    />
                     <button
                       type="submit"
                       className="w-full py-5 rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-black text-base uppercase tracking-wider flex items-center justify-center gap-3 shadow-[0_15px_30px_rgba(168,85,247,0.3)] transition-all hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:-translate-y-1 active:scale-95"
