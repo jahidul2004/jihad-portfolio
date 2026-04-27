@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   FaFacebook,
   FaGithub,
@@ -51,6 +52,7 @@ import {
 import { MdDirectionsBike } from "react-icons/md";
 import ProjectCard from "./components/projectCard/ProjectCard";
 import { DiChrome } from "react-icons/di";
+import Swal from "sweetalert2";
 
 // Helper to get skill icons, descriptions, and perfectly matched theme colors
 const getSkillInfo = (techName) => {
@@ -229,15 +231,171 @@ function App() {
 
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
 
-  const handleContactSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    alert("Message sent successfully! Check console for data.");
-    console.log("Contact Data:", Object.fromEntries(formData.entries()));
-    e.target.reset();
-  };
+  // const handleContactSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   const form = e.target;
+
+  //   const formData = new FormData(form);
+
+  //   const data = {
+  //     name: formData.get("name"),
+  //     email: formData.get("email"),
+  //     subject: formData.get("subject"),
+  //     message: formData.get("message"),
+  //   };
+
+  //   // 🔥 send main email
+  //   emailjs
+  //     .send(
+  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  //       data,
+  //       import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  //     )
+  //     .then(() => {
+  //       console.log("Main email sent");
+  //       Swal.fire({
+  //         icon: "success",
+  //         title: "Message Sent!",
+  //         text: "Your message has been sent successfully. I'll get back to you soon!",
+  //         confirmButtonText: "Great!",
+  //         timer: 3000,
+  //         timerProgressBar: true,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       Swal.fire({
+  //         icon: "error",
+  //         title: "Oops...",
+  //         text: "Something went wrong! Try again later.",
+  //         footer:
+  //           '<div><p className="text-[11px] font-black text-gray-500 uppercase tracking-widest mb-1">Email Address</p><p className="font-black text-lg truncate">islamjahiduljihad@gmail.com</p></div>',
+  //       });
+  //     });
+
+  //   // 🔁 auto reply
+  //   emailjs.send(
+  //     import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  //     "template_rbo9ipp", // <-- change this
+  //     data,
+  //     import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  //   );
+
+  //   form.reset();
+  // };
 
   // Organized Skill Data with Tab Icons
+
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    // 🔥 SweetAlert2 Premium Theme Configuration (Forced Android Rounded Style)
+    const swalConfig = {
+      buttonsStyling: false,
+      customClass: {
+        // '!' is used to strictly override sweetalert's default radius and fonts
+        popup:
+          "bg-white dark:bg-[#18181b] !rounded-[2.5rem] border border-gray-200 dark:border-white/10 shadow-2xl font-sans pb-2",
+        title:
+          "text-2xl sm:text-[28px] font-black text-gray-900 dark:text-white tracking-tighter mt-4",
+        htmlContainer:
+          "text-gray-600 dark:text-gray-400 font-medium text-[15px] sm:text-base !m-0 !px-4 sm:!px-8",
+        confirmButton:
+          "bg-gradient-to-r from-purple-500 to-blue-500 text-white font-extrabold text-[15px] rounded-2xl px-10 py-3.5 shadow-[0_10px_20px_rgba(168,85,247,0.2)] hover:shadow-lg transition-all active:scale-95 mt-4",
+        cancelButton:
+          "bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 font-extrabold text-[14px] rounded-2xl px-8 py-3.5 hover:bg-gray-200 dark:hover:bg-white/20 transition-all active:scale-95 mt-4 ml-0 sm:ml-4",
+      },
+    };
+
+    // UI Loading State (Optional: If you have an isSending state, set it true here)
+
+    // 🔥 send main email
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        console.log("Main email sent");
+
+        // Success Popup
+        Swal.fire({
+          ...swalConfig,
+          icon: "success",
+          title: "Message Sent!",
+          text: "Your message has been sent successfully. I'll get back to you shortly!",
+          confirmButtonText: "Awesome!",
+          timer: 4000,
+          timerProgressBar: true,
+        });
+
+        form.reset();
+      })
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+
+        // ❌ Error Popup with Side-by-Side Premium Cards
+        Swal.fire({
+          ...swalConfig,
+          icon: "error",
+          title: "Oops! Delivery Failed",
+          html: `
+            <p class="mb-6 mt-2 text-sm sm:text-base">The server seems to be busy. But don't let that stop us from connecting! Reach me directly:</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left font-sans">
+                
+                <a href="https://wa.me/+8801XXXXXXXXX" target="_blank" class="flex items-center gap-4 p-4 rounded-[1.8rem] bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-green-500/10 group no-underline">
+                    <div class="w-12 h-12 rounded-2xl bg-green-500 text-white flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.4c-33.1 0-65.5-8.9-94-25.8l-6.7-4-69.8 18.3L72 334.1l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.7 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                    </div>
+                    <div class="overflow-hidden w-full">
+                        <p class="text-[10px] font-black text-green-700 dark:text-green-400 uppercase tracking-widest mb-0.5 m-0">Chat Instantly</p>
+                        <p class="font-black text-[15px] text-gray-900 m-0 leading-none truncate">WhatsApp</p>
+                    </div>
+                </a>
+
+                <a href="mailto:contact@jahidul.dev" class="flex items-center gap-4 p-4 rounded-[1.8rem] bg-blue-50 dark:bg-[#0066CC]/10 border border-blue-200 dark:border-[#0066CC]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0066CC]/10 group no-underline">
+                    <div class="w-12 h-12 rounded-2xl bg-[#0066CC] text-white flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="overflow-hidden w-full">
+                        <p class="text-[10px] font-black text-blue-700 dark:text-[#0066CC] uppercase tracking-widest mb-0.5 m-0">Direct Message</p>
+                        <p class="font-black text-[15px] text-gray-900 m-0 leading-none truncate">Email Me</p>
+                    </div>
+                </a>
+                
+            </div>
+          `,
+          showConfirmButton: false,
+          showCancelButton: true,
+          cancelButtonText: "I'll try again later",
+        });
+      });
+
+    // 🔁 Auto-reply (Silent background task)
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_AUTOREPLY_TEMPLATE_ID,
+        data,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .catch((err) => console.log("Auto-reply background failed:", err));
+  };
+
   const skillCategories = [
     {
       name: "Frontend",
@@ -353,13 +511,21 @@ function App() {
               {/* Restored Social Icons */}
               <div className="flex gap-4 justify-center w-full mb-6">
                 {[
-                  { icon: FaFacebook, color: "text-[#1877F2]", link: "https://facebook.com/jahidul.islam.941620" },
+                  {
+                    icon: FaFacebook,
+                    color: "text-[#1877F2]",
+                    link: "https://facebook.com/jahidul.islam.941620",
+                  },
                   {
                     icon: FaGithub,
                     color: isDark ? "text-white" : "text-black",
                     link: "https://github.com/jahidul2004",
                   },
-                  { icon: FaLinkedin, color: "text-[#0A66C2]", link: "https://linkedin.com/in/islam-jahidul-jihad" },
+                  {
+                    icon: FaLinkedin,
+                    color: "text-[#0A66C2]",
+                    link: "https://linkedin.com/in/islam-jahidul-jihad",
+                  },
                   {
                     icon: FaSquareXTwitter,
                     color: isDark ? "text-white" : "text-black",
