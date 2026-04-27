@@ -41,6 +41,8 @@ import ProjectCard from "./components/projectCard/ProjectCard";
 import { DiChrome } from "react-icons/di";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
+import { AiFillAlert } from "react-icons/ai";
+import { RiSparklingLine } from "react-icons/ri";
 
 // =======================================================
 // 1. STRUCTURED JSON DATA FOR SKILLS (Direct PNG/SVG Links)
@@ -1161,7 +1163,7 @@ function App() {
           {isChatOpen ? (
             <FiX size={30} className="relative z-10" />
           ) : (
-            <FiMessageSquare size={30} className="relative z-10" />
+            <RiSparklingLine size={30} className="relative z-10" />
           )}
         </button>
       </div>
