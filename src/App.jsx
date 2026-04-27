@@ -210,6 +210,7 @@ const projectTabIcons = {
 };
 
 function App() {
+  const [isMobile] = useState(window.innerWidth < 1024);
   const [captchaValue, setCaptchaValue] = useState(null);
 
   const handleCaptchaChange = (value) => {
@@ -997,7 +998,7 @@ function App() {
 
                   <div className="space-y-5">
                     <div
-                      className={`flex items-center gap-6 p-6 rounded-[2rem] transition-all ${isDark ? "bg-black/40 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
+                      className={`flex flex-col md:flex-row text-center md:text-left items-center gap-6 p-6 rounded-[2rem] transition-all ${isDark ? "bg-black/40 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
                     >
                       <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-500 flex items-center justify-center shadow-inner">
                         <FiMail size={24} />
@@ -1012,7 +1013,7 @@ function App() {
                       </div>
                     </div>
                     <div
-                      className={`flex items-center gap-6 p-6 rounded-[2rem] transition-all ${isDark ? "bg-black/40 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
+                      className={`flex flex-col md:flex-row text-center md:text-left items-center gap-6 p-6 rounded-[2rem] transition-all ${isDark ? "bg-black/40 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
                     >
                       <div className="w-14 h-14 rounded-2xl bg-purple-500/10 text-orange-500 flex items-center justify-center shadow-inner">
                         <FiMapPin size={24} />
@@ -1061,10 +1062,16 @@ function App() {
                       required
                       className={`w-full px-6 py-5 rounded-3xl border outline-none font-bold text-sm transition-all resize-none shadow-inner ${inputStyle}`}
                     ></textarea>
-                    <ReCAPTCHA
-                      sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                      onChange={handleCaptchaChange}
-                    />
+                    <div
+                      style={{
+                        transform: isMobile ? "scale(0.9)" : "scale(1)",
+                      }}
+                    >
+                      <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={handleCaptchaChange}
+                      />
+                    </div>
                     <button
                       type="submit"
                       className="w-full py-5 rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 text-white font-black text-base uppercase tracking-wider flex items-center justify-center gap-3 shadow-[0_15px_30px_rgba(168,85,247,0.3)] transition-all hover:shadow-[0_15px_40px_rgba(168,85,247,0.4)] hover:-translate-y-1 active:scale-95"
