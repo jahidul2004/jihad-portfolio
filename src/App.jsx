@@ -7,15 +7,12 @@ import {
   FaSun,
   FaMoon,
   FaReact,
-  FaNodeJs,
-  FaJava,
-  FaPython,
   FaGlobe,
   FaAndroid,
   FaGraduationCap,
   FaSchool,
   FaHeart,
-  FaFontAwesome,
+  FaPython,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -35,177 +32,192 @@ import {
   FiDatabase,
   FiSettings,
   FiTerminal,
+  FiMessageSquare,
+  FiX,
 } from "react-icons/fi";
-import { TbBrandNextjs, TbBrandStripe, TbApi } from "react-icons/tb";
-import {
-  SiMongodb,
-  SiExpress,
-  SiTailwindcss,
-  SiJavascript,
-  SiFirebase,
-  SiGit,
-  SiNpm,
-  SiNetlify,
-  SiVercel,
-  SiJsonwebtokens,
-} from "react-icons/si";
+import { SiNpm, SiTailwindcss } from "react-icons/si";
 import { MdDirectionsBike } from "react-icons/md";
 import ProjectCard from "./components/projectCard/ProjectCard";
 import { DiChrome } from "react-icons/di";
 import Swal from "sweetalert2";
 import ReCAPTCHA from "react-google-recaptcha";
 
-// Helper to get skill icons, descriptions, and perfectly matched theme colors
-const getSkillInfo = (techName) => {
-  const t = techName.toLowerCase();
-  if (t.includes("react"))
-    return {
-      icon: FaReact,
-      color: "text-[#61DAFB]",
-      bg: "bg-[#61DAFB]/10",
-      desc: "UI Library",
-    };
-  if (t.includes("next"))
-    return {
-      icon: TbBrandNextjs,
-      color: "dark:text-black",
-      bg: "dark:bg-white/10 bg-black/5",
-      desc: "Framework",
-    };
-  if (t.includes("tailwind"))
-    return {
-      icon: SiTailwindcss,
-      color: "text-[#06B6D4]",
-      bg: "bg-[#06B6D4]/10",
-      desc: "CSS Utility",
-    };
-  if (t.includes("javascript"))
-    return {
-      icon: SiJavascript,
-      color: "text-[#F7DF1E]",
-      bg: "bg-[#F7DF1E]/10",
-      desc: "Language",
-    };
-  if (t.includes("node"))
-    return {
-      icon: FaNodeJs,
-      color: "text-[#339933]",
-      bg: "bg-[#339933]/10",
-      desc: "JS Runtime",
-    };
-  if (t.includes("express"))
-    return {
-      icon: SiExpress,
-      color: "dark:text-gray-300 text-gray-700",
-      bg: "bg-gray-500/10",
-      desc: "Server API",
-    };
-  if (t.includes("mongo"))
-    return {
-      icon: SiMongodb,
-      color: "text-[#47A248]",
-      bg: "bg-[#47A248]/10",
-      desc: "NoSQL DB",
-    };
-  if (t.includes("firebase"))
-    return {
-      icon: SiFirebase,
-      color: "text-[#FFCA28]",
-      bg: "bg-[#FFCA28]/10",
-      desc: "BaaS Platform",
-    };
-  if (t.includes("python"))
-    return {
-      icon: FaPython,
-      color: "text-[#3776AB]",
-      bg: "bg-[#3776AB]/10",
-      desc: "Language",
-    };
-  if (t.includes("git"))
-    return {
-      icon: SiGit,
-      color: "text-[#F05032]",
-      bg: "bg-[#F05032]/10",
-      desc: "Version Control",
-    };
-  if (t.includes("npm"))
-    return {
-      icon: SiNpm,
-      color: "text-[#CB3837]",
-      bg: "bg-[#CB3837]/10",
-      desc: "Package Manager",
-    };
-  if (t.includes("vercel"))
-    return {
-      icon: SiVercel,
-      color: "text-black",
-      bg: "dark:bg-white/10 bg-black/5",
-      desc: "Deployment",
-    };
-  if (t.includes("netlify"))
-    return {
-      icon: SiNetlify,
-      color: "text-[#00C7B7]",
-      bg: "bg-[#00C7B7]/10",
-      desc: "Deployment",
-    };
-  if (t.includes("JSON Web Token") || t.includes("jwt"))
-    return {
-      icon: SiJsonwebtokens,
-      color: "text-[#FF0000]",
-      bg: "bg-[#FF0000]/10",
-      desc: "Authentication",
-    };
-  if (t.includes("stripe"))
-    return {
-      icon: TbBrandStripe,
-      color: "text-[#008CDD]",
-      bg: "bg-[#008CDD]/10",
-      desc: "Payment Gateway",
-    };
-  if (t.includes("java"))
-    return {
-      icon: FaJava,
-      color: "text-[#007396]",
-      bg: "bg-[#007396]/10",
-      desc: "Language",
-    };
-  if (t.includes("vs code") || t.includes("vscode"))
-    return {
-      isImage: true,
-      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-      bg: "bg-blue-500/10",
-      desc: "Code Editor",
-    };
-  if (t.includes("DaisyUI") || t.includes("daisyui"))
-    return {
-      isImage: true,
-      src: "https://i.ibb.co.com/23xvCKWH/daisyui.png",
-      bg: "bg-blue-500/10",
-      desc: "UI Component Library",
-    };
-  if (t.includes("FontAwesome") || t.includes("fontawesome"))
-    return {
-      icon: FaFontAwesome,
-      color: "text-blue-500",
-      bg: "bg-blue-500/10",
-      desc: "UI Component Library",
-    };
-
-  return {
-    icon: FiCode,
-    color: "text-purple-500",
-    bg: "bg-purple-500/10",
-    desc: "Technology",
-  }; // Fallback
-};
+// =======================================================
+// 1. STRUCTURED JSON DATA FOR SKILLS (Direct PNG/SVG Links)
+// =======================================================
+const skillCategoriesData = [
+  {
+    name: "Frontend",
+    icon: FiMonitor,
+    skills: [
+      {
+        name: "React.js",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+        bg: "bg-[#61DAFB]/10",
+        desc: "UI Library",
+        invertDark: false,
+      },
+      {
+        name: "Next.js",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+        bg: "bg-black/5 dark:bg-white/10",
+        desc: "Framework",
+        invertDark: true,
+      },
+      {
+        name: "Tailwind CSS",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+        bg: "bg-[#06B6D4]/10",
+        desc: "CSS Utility",
+        invertDark: false,
+      },
+      {
+        name: "JavaScript",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+        bg: "bg-[#F7DF1E]/10",
+        desc: "Language",
+        invertDark: false,
+      },
+      {
+        name: "DaisyUI",
+        src: "https://raw.githubusercontent.com/saadeghi/daisyui-images/master/images/daisyui-logo/favicon-192.png",
+        bg: "bg-[#5A0EF8]/10",
+        desc: "UI Component Library",
+        invertDark: false,
+      },
+      {
+        name: "FontAwesome",
+        src: "https://img.icons8.com/color/48/font-awesome.png",
+        bg: "bg-blue-500/10",
+        desc: "Icons Library",
+        invertDark: false,
+      },
+    ],
+  },
+  {
+    name: "Backend",
+    icon: FiDatabase,
+    skills: [
+      {
+        name: "Node.js",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+        bg: "bg-[#339933]/10",
+        desc: "JS Runtime",
+        invertDark: false,
+      },
+      {
+        name: "Express.js",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+        bg: "bg-gray-500/10",
+        desc: "Server API",
+        invertDark: true,
+      },
+      {
+        name: "MongoDB",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+        bg: "bg-[#47A248]/10",
+        desc: "NoSQL DB",
+        invertDark: false,
+      },
+      {
+        name: "Firebase",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg",
+        bg: "bg-[#FFCA28]/10",
+        desc: "BaaS Platform",
+        invertDark: false,
+      },
+      {
+        name: "JSON Web Token",
+        src: "https://img.icons8.com/color/48/json-web-token.png",
+        bg: "bg-[#FF0000]/10",
+        desc: "Authentication",
+        invertDark: false,
+      },
+    ],
+  },
+  {
+    name: "Tools",
+    icon: FiSettings,
+    skills: [
+      {
+        name: "Git",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+        bg: "bg-[#F05032]/10",
+        desc: "Version Control",
+        invertDark: false,
+      },
+      {
+        name: "VS Code",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+        bg: "bg-blue-500/10",
+        desc: "Code Editor",
+        invertDark: false,
+      },
+      {
+        name: "NPM",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg",
+        bg: "bg-[#CB3837]/10",
+        desc: "Package Manager",
+        invertDark: false,
+      },
+      {
+        name: "Netlify",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netlify/netlify-original.svg",
+        bg: "bg-[#00C7B7]/10",
+        desc: "Deployment",
+        invertDark: false,
+      },
+      {
+        name: "Vercel",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
+        bg: "bg-black/5 dark:bg-white/10",
+        desc: "Deployment",
+        invertDark: true,
+      },
+      {
+        name: "Stripe Integration",
+        src: "https://img.icons8.com/color/48/stripe.png",
+        bg: "bg-[#008CDD]/10",
+        desc: "Payment Gateway",
+        invertDark: false,
+      },
+    ],
+  },
+  {
+    name: "Languages",
+    icon: FiTerminal,
+    skills: [
+      {
+        name: "Python",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+        bg: "bg-[#3776AB]/10",
+        desc: "Language",
+        invertDark: false,
+      },
+      {
+        name: "C",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
+        bg: "bg-blue-500/10",
+        desc: "Language",
+        invertDark: false,
+      },
+      {
+        name: "Java",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+        bg: "bg-[#007396]/10",
+        desc: "Language",
+        invertDark: false,
+      },
+    ],
+  },
+];
 
 // Project tab icons mapping
 const projectTabIcons = {
   Websites: FaGlobe,
   "Android Apps": FaAndroid,
   "NPM Packages": SiNpm,
-  Python: FaPython,
+  Python: FaPython, // Can use text or image, matching user's original logic
   "Chrome Extensions": DiChrome,
 };
 
@@ -216,6 +228,7 @@ function App() {
   const handleCaptchaChange = (value) => {
     setCaptchaValue(value);
   };
+
   const [projects, setProjects] = useState([]);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "dark",
@@ -224,6 +237,28 @@ function App() {
   // Tab States
   const [activeSkillTab, setActiveSkillTab] = useState("Frontend");
   const [activeProjectTab, setActiveProjectTab] = useState("Websites");
+
+  // =======================================================
+  // AI ASSISTANT "SU" STATES
+  // =======================================================
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    {
+      sender: "su",
+      text: "Hi there! I am Su, Jihad's AI Assistant. How can I help you today?",
+    },
+  ]);
+  const [isAiTyping, setIsAiTyping] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  // Scroll to bottom of chat automatically
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatMessages, isAiTyping]);
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -237,62 +272,6 @@ function App() {
   }, [theme]);
 
   const toggleTheme = () => setTheme(theme === "light" ? "dark" : "light");
-
-  // const handleContactSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const form = e.target;
-
-  //   const formData = new FormData(form);
-
-  //   const data = {
-  //     name: formData.get("name"),
-  //     email: formData.get("email"),
-  //     subject: formData.get("subject"),
-  //     message: formData.get("message"),
-  //   };
-
-  //   // 🔥 send main email
-  //   emailjs
-  //     .send(
-  //       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  //       data,
-  //       import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-  //     )
-  //     .then(() => {
-  //       console.log("Main email sent");
-  //       Swal.fire({
-  //         icon: "success",
-  //         title: "Message Sent!",
-  //         text: "Your message has been sent successfully. I'll get back to you soon!",
-  //         confirmButtonText: "Great!",
-  //         timer: 3000,
-  //         timerProgressBar: true,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       Swal.fire({
-  //         icon: "error",
-  //         title: "Oops...",
-  //         text: "Something went wrong! Try again later.",
-  //         footer:
-  //           '<div><p className="text-[11px] font-black text-gray-500 uppercase tracking-widest mb-1">Email Address</p><p className="font-black text-lg truncate">islamjahiduljihad@gmail.com</p></div>',
-  //       });
-  //     });
-
-  //   // 🔁 auto reply
-  //   emailjs.send(
-  //     import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  //     "template_rbo9ipp", // <-- change this
-  //     data,
-  //     import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-  //   );
-
-  //   form.reset();
-  // };
-
-  // Organized Skill Data with Tab Icons
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
@@ -317,7 +296,6 @@ function App() {
     const swalConfig = {
       buttonsStyling: false,
       customClass: {
-        // '!' is used to strictly override sweetalert's default radius and fonts
         popup:
           "bg-white dark:bg-[#18181b] !rounded-[2.5rem] border border-gray-200 dark:border-white/10 shadow-2xl font-sans pb-2",
         title:
@@ -330,8 +308,6 @@ function App() {
           "bg-gray-100 dark:bg-white/10 text-gray-700 dark:text-gray-300 font-extrabold text-[14px] rounded-2xl px-8 py-3.5 hover:bg-gray-200 dark:hover:bg-white/20 transition-all active:scale-95 mt-4 ml-0 sm:ml-4",
       },
     };
-
-    // UI Loading State (Optional: If you have an isSending state, set it true here)
 
     // 🔥 send main email
     emailjs
@@ -376,17 +352,17 @@ function App() {
                     </div>
                     <div class="overflow-hidden w-full">
                         <p class="text-[10px] font-black text-green-700 dark:text-green-400 uppercase tracking-widest mb-0.5 m-0">Chat Instantly</p>
-                        <p class="font-black text-[15px] text-gray-900 m-0 leading-none truncate">WhatsApp</p>
+                        <p class="font-black text-[15px] text-gray-900 dark:text-white m-0 leading-none truncate">WhatsApp</p>
                     </div>
                 </a>
 
-                <a href="mailto:contact@jahidul.dev" class="flex items-center gap-4 p-4 rounded-[1.8rem] bg-blue-50 dark:bg-[#0066CC]/10 border border-blue-200 dark:border-[#0066CC]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0066CC]/10 group no-underline">
+                <a href="mailto:islamjahiduljihad@gmail.com" class="flex items-center gap-4 p-4 rounded-[1.8rem] bg-blue-50 dark:bg-[#0066CC]/10 border border-blue-200 dark:border-[#0066CC]/20 transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-[#0066CC]/10 group no-underline">
                     <div class="w-12 h-12 rounded-2xl bg-[#0066CC] text-white flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                         <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
                     <div class="overflow-hidden w-full">
                         <p class="text-[10px] font-black text-blue-700 dark:text-[#0066CC] uppercase tracking-widest mb-0.5 m-0">Direct Message</p>
-                        <p class="font-black text-[15px] text-gray-900 m-0 leading-none truncate">Email Me</p>
+                        <p class="font-black text-[15px] text-gray-900 dark:text-white m-0 leading-none truncate">Email Me</p>
                     </div>
                 </a>
                 
@@ -409,45 +385,59 @@ function App() {
       .catch((err) => console.log("Auto-reply background failed:", err));
   };
 
-  const skillCategories = [
-    {
-      name: "Frontend",
-      icon: FiMonitor,
-      skills: [
-        "React.js",
-        "Next.js",
-        "Tailwind CSS",
-        "JavaScript",
-        "DaisyUI",
-        "FontAwesome",
-      ],
-    },
-    {
-      name: "Backend",
-      icon: FiDatabase,
-      skills: [
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Firebase",
-        "JSON Web Token",
-      ],
-    },
-    {
-      name: "Tools",
-      icon: FiSettings,
-      skills: [
-        "Git",
-        "VS Code",
-        "NPM",
-        "Netlify",
-        "Vercel",
-        "Stripe Integration",
-      ],
-    },
-    { name: "Languages", icon: FiTerminal, skills: ["Python", "C", "Java"] },
-  ];
+  // =======================================================
+  // AI ASSISTANT "SU" - FORM SUBMIT HANDLER
+  // =======================================================
+  const handleChatSubmit = async (e) => {
+    e.preventDefault();
 
+    const message = e.target.chatMessage.value;
+    if (!message.trim()) return;
+
+    // Add user message instantly
+    setChatMessages((prev) => [...prev, { sender: "user", text: message }]);
+
+    e.target.reset();
+    setIsAiTyping(true);
+
+    try {
+      const res = await fetch("https://su-server.vercel.app/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      // 🔥 Fetch automatically catch block-e error pathay na, tai eita check kora joruri
+      if (!res.ok) {
+        throw new Error(`Server responded with status: ${res.status}`);
+      }
+
+      const data = await res.json();
+
+      // Check data structure
+      if (data && data.reply) {
+        setChatMessages((prev) => [
+          ...prev,
+          { sender: "su", text: data.reply },
+        ]);
+      } else {
+        throw new Error("Invalid response format from backend");
+      }
+    } catch (error) {
+      console.error("Chatbot Connection Error:", error);
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          sender: "su",
+          text: "Oops! Connection failed 😓 Ensure your backend is running.",
+        },
+      ]);
+    } finally {
+      setIsAiTyping(false);
+    }
+  };
   const projectCategories = [
     "Websites",
     "Android Apps",
@@ -557,49 +547,6 @@ function App() {
                 ))}
               </div>
             </div>
-
-            {/* Beautiful Contact Info Cards */}
-            {/* <div className="space-y-2 w-full mb-4">
-              <div
-                className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${isDark ? "bg-white/5 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
-              >
-                <div
-                  className={`w-12 h-12 flex items-center justify-center rounded-xl ${isDark ? "bg-purple-500/20 text-purple-400" : "bg-purple-100 text-purple-600"}`}
-                >
-                  <FiMail size={20} />
-                </div>
-                <a
-                  href="mailto:islamjahiduljihad@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div>
-                    <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">
-                      Email Me
-                    </p>
-                    <p className="text-sm font-extrabold truncate">
-                      islamjahiduljihad@gmail.com
-                    </p>
-                  </div>
-                </a>
-              </div>
-
-              <div
-                className={`flex items-center gap-4 p-4 rounded-2xl transition-all ${isDark ? "bg-white/5 border border-white/5" : "bg-slate-50 border border-slate-200"}`}
-              >
-                <div
-                  className={`w-12 h-12 flex items-center justify-center rounded-xl ${isDark ? "bg-blue-500/20 text-blue-400" : "bg-blue-100 text-blue-600"}`}
-                >
-                  <FiMapPin size={20} />
-                </div>
-                <div>
-                  <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">
-                    Location
-                  </p>
-                  <p className="text-sm font-extrabold">Dhaka, Bangladesh</p>
-                </div>
-              </div>
-            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-3 w-full mt-auto">
@@ -711,7 +658,7 @@ function App() {
             </p>
           </div>
 
-          {/* EXPERTISE SECTION (Fixed Colors & Perfect Tabbar) */}
+          {/* EXPERTISE SECTION (JSON mapped icons) */}
           <div id="expertise" className="mb-32 scroll-mt-28">
             <h2 className="text-4xl sm:text-5xl font-black mb-12 flex items-center gap-4 tracking-tighter">
               <FiCode className="text-purple-500" /> My{" "}
@@ -720,9 +667,9 @@ function App() {
 
             {/* Tab Bar with Icons */}
             <div
-              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto`}
+              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto ${isDark ? "bg-white/5" : "bg-slate-100"}`}
             >
-              {skillCategories.map((category) => {
+              {skillCategoriesData.map((category) => {
                 const Icon = category.icon;
                 return (
                   <button
@@ -736,39 +683,33 @@ function App() {
               })}
             </div>
 
-            {/* Advanced Tech Cards */}
+            {/* Advanced Tech Cards mapped from JSON Array */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {skillCategories
+              {skillCategoriesData
                 .find((c) => c.name === activeSkillTab)
-                ?.skills.map((skillName, i) => {
-                  const {
-                    icon: SkillIcon,
-                    color,
-                    bg,
-                    desc,
-                    isImage,
-                    src,
-                  } = getSkillInfo(skillName);
+                ?.skills.map((skill, i) => {
                   return (
                     <div
                       key={i}
                       className={`flex items-center gap-5 p-6 rounded-[2rem] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${cardGlass}`}
                     >
                       <div
-                        className={`w-16 h-16 flex items-center justify-center rounded-2xl shadow-inner ${bg}`}
+                        className={`w-16 h-16 flex items-center justify-center rounded-2xl shadow-inner ${skill.bg}`}
                       >
-                        {isImage ? (
-                          <img src={src} alt={skillName} className="w-9 h-9" />
-                        ) : (
-                          <SkillIcon size={32} className={color} />
-                        )}
+                        <img
+                          src={skill.src}
+                          alt={skill.name}
+                          className={`w-9 h-9 object-contain ${isDark && skill.invertDark ? "invert opacity-90" : ""}`}
+                        />
                       </div>
                       <div>
-                        <h4 className="font-black text-xl mb-1">{skillName}</h4>
+                        <h4 className="font-black text-xl mb-1">
+                          {skill.name}
+                        </h4>
                         <p
                           className={`text-xs font-bold uppercase tracking-widest ${textMuted}`}
                         >
-                          {desc}
+                          {skill.desc}
                         </p>
                       </div>
                     </div>
@@ -785,7 +726,7 @@ function App() {
             </h2>
 
             <div
-              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto`}
+              className={`flex flex-wrap gap-3 mb-12 p-2.5 rounded-[1.5rem] custom-scrollbar overflow-x-auto ${isDark ? "bg-white/5" : "bg-slate-100"}`}
             >
               {projectCategories.map((tab) => {
                 const Icon = projectTabIcons[tab];
@@ -953,7 +894,6 @@ function App() {
                   key={i}
                   className={`p-8 rounded-[2.5rem] flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${cardGlass}`}
                 >
-                  {/* Clean Glowing Icon Wrapper - No thick dark border */}
                   <div
                     className={`w-20 h-20 rounded-[1.8rem] flex items-center justify-center mb-6 shadow-inner ${hobby.bg} ${hobby.color}`}
                   >
@@ -1107,13 +1047,132 @@ function App() {
         </div>
       </div>
 
+      {/* ======================================================= */}
+      {/* 🤖 AI ASSISTANT "SU" CHATBOT UI */}
+      {/* ======================================================= */}
+      <div className="fixed bottom-6 right-6 z-[150] flex flex-col items-end">
+        {isChatOpen && (
+          <div
+            className={`mb-4 w-[calc(100vw-3rem)] sm:w-[380px] h-[500px] max-h-[75vh] flex flex-col rounded-[2rem] overflow-hidden shadow-2xl transition-all duration-300 origin-bottom-right ${isDark ? "bg-[#18181b]/95 backdrop-blur-3xl border border-white/10" : "bg-white/95 backdrop-blur-3xl border border-gray-200"}`}
+          >
+            {/* Chatbot Header */}
+            <div
+              className={`flex items-center justify-between p-4 sm:p-5 border-b ${isDark ? "border-white/10 bg-black/20" : "border-gray-200 bg-gray-50/50"}`}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 p-[2px] shadow-md">
+                  <div
+                    className={`w-full h-full rounded-full flex items-center justify-center ${isDark ? "bg-[#18181b]" : "bg-white"}`}
+                  >
+                    <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 text-sm">
+                      Su
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-[15px] leading-tight">
+                    Su - AI Assistant
+                  </h3>
+                  <p className="text-[11px] font-bold text-green-500 flex items-center gap-1.5 tracking-wide uppercase">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>{" "}
+                    Online
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setIsChatOpen(false)}
+                className={`p-2.5 rounded-full transition-all ${isDark ? "bg-white/10 hover:bg-red-500 hover:text-white" : "bg-gray-200 hover:bg-red-500 hover:text-white"}`}
+              >
+                <FiX size={18} />
+              </button>
+            </div>
+
+            {/* Chat Messages Area */}
+            <div className="flex-1 overflow-y-auto p-5 custom-scrollbar flex flex-col gap-4">
+              {chatMessages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={`flex w-full ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[80%] p-4 rounded-2xl text-[14px] font-medium leading-relaxed ${
+                      msg.sender === "user"
+                        ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-br-sm shadow-md"
+                        : `${isDark ? "bg-white/10 text-gray-200" : "bg-gray-100 text-gray-800"} rounded-bl-sm border ${isDark ? "border-white/5" : "border-gray-200"}`
+                    }`}
+                  >
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+
+              {/* Typing Indicator */}
+              {isAiTyping && (
+                <div className="flex w-full justify-start">
+                  <div
+                    className={`p-4 rounded-2xl rounded-bl-sm flex items-center gap-1.5 ${isDark ? "bg-white/10" : "bg-gray-100"}`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></span>
+                    <span
+                      className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
+                      style={{ animationDelay: "0.2s" }}
+                    ></span>
+                    <span
+                      className="w-2 h-2 rounded-full bg-gray-400 animate-bounce"
+                      style={{ animationDelay: "0.4s" }}
+                    ></span>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Chat Input Area */}
+            <form
+              onSubmit={handleChatSubmit}
+              className={`p-4 border-t ${isDark ? "border-white/10 bg-black/20" : "border-gray-200 bg-gray-50/50"}`}
+            >
+              <div className="flex items-center relative">
+                <input
+                  type="text"
+                  name="chatMessage"
+                  placeholder="Ask Su anything..."
+                  autoComplete="off"
+                  className={`w-full rounded-full pl-5 pr-14 py-3.5 text-sm font-semibold outline-none transition-all shadow-inner ${isDark ? "bg-[#27272a]/80 border-white/10 text-white placeholder-gray-500" : "bg-white border-gray-300 text-gray-900 placeholder-gray-400 border"}`}
+                />
+                <button
+                  type="submit"
+                  className="absolute right-1.5 w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white flex items-center justify-center hover:scale-105 active:scale-95 transition-transform shadow-lg"
+                >
+                  <FiSend size={16} className="ml-0.5" />
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
+
+        {/* AI Floating Trigger Button */}
+        <button
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          className="w-16 h-16 sm:w-[70px] sm:h-[70px] rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white flex items-center justify-center shadow-[0_10px_30px_rgba(168,85,247,0.5)] hover:scale-110 active:scale-95 transition-all relative group"
+        >
+          {/* Outer Ping Glow */}
+          <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-40"></div>
+          {isChatOpen ? (
+            <FiX size={30} className="relative z-10" />
+          ) : (
+            <FiMessageSquare size={30} className="relative z-10" />
+          )}
+        </button>
+      </div>
+
       {/* Custom Scrollbar CSS */}
       <style>{`
-                .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-                .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-                .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.4); border-radius: 10px; }
-                .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(168, 85, 247, 0.7); }
-            `}</style>
+          .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+          .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+          .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.4); border-radius: 10px; }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(168, 85, 247, 0.7); }
+      `}</style>
     </div>
   );
 }
